@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Victor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pizza Victor</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="pizza-row">
+                <section class="pizza">
+                    <img src="img/pizza-pepperoni.jpg" alt="Pizza de Pepperoni" class="pizza-image">
+                    <div class="pizza-details">
+                        <h2>Pizza de Pepperoni</h2>
+                        <a href="descricao_pepperoni.html" class="description-link">Descrição</a>
+                        <p class="price">R$ 25,00</p>
+                        <button onclick="comprarPizza('Pepperoni', 25)">Comprar</button>
+                        </div>
+                </section>
+                <section class="pizza">
+                    <img src="img/pizza-margarita.jpg" alt="Pizza de Margherita" class="pizza-image">
+                    <div class="pizza-details">
+                        <h2>Pizza de Margherita</h2>
+                        <a href="descricao_margherita.html" class="description-link">Descrição</a>
+                        <p class="price">R$ 20,00</p>
+                        <button onclick="comprarPizza('Margherita', 20)">Comprar</button>
+                        </div>
+                </section>
+            </div>
+            <div class="pizza-row">
+                <section class="pizza">
+                    <img src="img/pizza-frango-catupiry.jpg" alt="Pizza de Frango com Catupiry" class="pizza-image">
+                    <div class="pizza-details">
+                        <h2>Pizza de Frango com Catupiry</h2>
+                        <a href="descricao_frango_catupiry.html" class="description-link">Descrição</a>
+                        <p class="price">R$ 28,00</p>
+                        <button onclick="comprarPizza('Frango com Catupiry', 28)">Comprar</button>
+                        </div>
+                </section>
+                <section class="pizza">
+                    <img src="img/pizza-vegetariana.jpg" alt="Pizza Vegetariana" class="pizza-image">
+                    <div class="pizza-details">
+                        <h2>Pizza Vegetariana</h2>
+                        <a href="descricao_vegetariana.html" class="description-link">Descrição</a>
+                        <p class="price">R$ 23,00</p>
+                        <button onclick="comprarPizza('Vegetariana', 23)">Comprar</button>
+                        </div>
+                </section>
+            </div>
+        </div>
+        
+        <section class="container" id="pedidos-section">
+            <h2>Meus Pedidos</h2>
+            <div id="lista-de-pedidos">
+                </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

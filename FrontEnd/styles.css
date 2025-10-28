@@ -1,0 +1,127 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #343a40;
+    padding: 20px 0;
+    color: #fff;
+    text-align: left;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+main {
+    padding: 20px 0;
+}
+
+/* Alterações para dois produtos em cada linha */
+.pizza-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pizza {
+    width: calc(50% - 20px);
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pizza-details {
+    padding: 20px;
+    text-align: left;
+}
+
+.pizza-image {
+    width: 100%;
+    height: auto;
+}
+
+.deletar {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+button {
+    background-color: #ffc107;
+    color: #343a40;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ffca28;
+}
+
+footer {
+    background-color: #343a40;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.Imagem{
+    width: 200px;
+    padding: 42px;
+    
+  }
+
+  
