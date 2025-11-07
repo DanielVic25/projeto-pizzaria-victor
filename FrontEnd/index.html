@@ -1,75 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Victor</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Victor</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Pizza Victor</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <div class="container">
-            <div class="pizza-row">
-                <section class="pizza">
-                    <img src="img/pizza-pepperoni.jpg" alt="Pizza de Pepperoni" class="pizza-image">
-                    <div class="pizza-details">
-                        <h2>Pizza de Pepperoni</h2>
-                        <a href="descricao_pepperoni.html" class="description-link">Descrição</a>
-                        <p class="price">R$ 25,00</p>
-                        <button onclick="comprarPizza('Pepperoni', 25)">Comprar</button>
-                        </div>
-                </section>
-                <section class="pizza">
-                    <img src="img/pizza-margarita.jpg" alt="Pizza de Margherita" class="pizza-image">
-                    <div class="pizza-details">
-                        <h2>Pizza de Margherita</h2>
-                        <a href="descricao_margherita.html" class="description-link">Descrição</a>
-                        <p class="price">R$ 20,00</p>
-                        <button onclick="comprarPizza('Margherita', 20)">Comprar</button>
-                        </div>
-                </section>
-            </div>
-            <div class="pizza-row">
-                <section class="pizza">
-                    <img src="img/pizza-frango-catupiry.jpg" alt="Pizza de Frango com Catupiry" class="pizza-image">
-                    <div class="pizza-details">
-                        <h2>Pizza de Frango com Catupiry</h2>
-                        <a href="descricao_frango_catupiry.html" class="description-link">Descrição</a>
-                        <p class="price">R$ 28,00</p>
-                        <button onclick="comprarPizza('Frango com Catupiry', 28)">Comprar</button>
-                        </div>
-                </section>
-                <section class="pizza">
-                    <img src="img/pizza-vegetariana.jpg" alt="Pizza Vegetariana" class="pizza-image">
-                    <div class="pizza-details">
-                        <h2>Pizza Vegetariana</h2>
-                        <a href="descricao_vegetariana.html" class="description-link">Descrição</a>
-                        <p class="price">R$ 23,00</p>
-                        <button onclick="comprarPizza('Vegetariana', 23)">Comprar</button>
-                        </div>
-                </section>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="container header-content">
+      <h1 class="logo">🍕 Pizza & Cia</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container pizzas">
+      <h2 class="section-title">Escolha sua pizza favorita</h2>
+
+      <div class="pizza-row">
+        <article class="pizza">
+          <img src="img/pizza-pepperoni.jpg" alt="Pizza de Pepperoni" class="pizza-image" />
+          <div class="pizza-details">
+            <h3>Pizza de Pepperoni</h3>
+            <a href="descricao_pepperoni.html" class="description-link">Ver descrição</a>
+            <p class="price">R$ 25,00</p>
+            <button onclick="abrirFormulario('Pepperoni', 25)">Comprar</button>
+          </div>
+        </article>
+
+        <article class="pizza">
+          <img src="img/pizza-margarita.jpg" alt="Pizza de Margherita" class="pizza-image" />
+          <div class="pizza-details">
+            <h3>Pizza de Margherita</h3>
+            <a href="descricao_margherita.html" class="description-link">Ver descrição</a>
+            <p class="price">R$ 20,00</p>
+            <button onclick="abrirFormulario('Margherita', 20)">Comprar</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="pizza-row">
+        <article class="pizza">
+          <img src="img/pizza-frango-catupiry.jpg" alt="Pizza de Frango com Catupiry" class="pizza-image" />
+          <div class="pizza-details">
+            <h3>Pizza de Frango com Catupiry</h3>
+            <a href="descricao_frango_catupiry.html" class="description-link">Ver descrição</a>
+            <p class="price">R$ 28,00</p>
+            <button onclick="abrirFormulario('Frango com Catupiry', 28)">Comprar</button>
+          </div>
+        </article>
+
+        <article class="pizza">
+          <img src="img/pizza-vegetariana.jpg" alt="Pizza Vegetariana" class="pizza-image" />
+          <div class="pizza-details">
+            <h3>Pizza Vegetariana</h3>
+            <a href="descricao_vegetariana.html" class="description-link">Ver descrição</a>
+            <p class="price">R$ 23,00</p>
+            <button onclick="abrirFormulario('Vegetariana', 23)">Comprar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container pedidos" id="pedidos-section">
+      <h2>🧾 Meus Pedidos</h2>
+      <div id="lista-de-pedidos"></div>
+    </section>
+  </main>
+
+  <!-- Modal de pagamento e endereço -->
+  <div id="modal-compra" class="modal">
+    <div class="modal-content">
+      <h3>Finalizar Pedido</h3>
+      <p id="pizza-escolhida"></p>
+      <form id="form-compra" onsubmit="finalizarCompra(event)">
         
-        <section class="container" id="pedidos-section">
-            <h2>Meus Pedidos</h2>
-            <div id="lista-de-pedidos">
-                </div>
-        </section>
+        <!-- Campo de nome -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
 
-    </main>
+        <!-- Campo de telefone -->
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required pattern="\(\d{2}\)\s?\d{4,5}-\d{4}">
 
-    <script src="script.js"></script>
+        <!-- Campo de endereço -->
+        <label for="endereco">Endereço de Entrega:</label>
+        <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro..." required>
+
+        <!-- Campo de pagamento -->
+        <label for="pagamento">Forma de Pagamento:</label>
+        <select id="pagamento" name="pagamento" required>
+          <option value="">Selecione...</option>
+          <option value="Cartão de Crédito">Cartão de Crédito</option>
+          <option value="Cartão de Débito">Cartão de Débito</option>
+          <option value="Pix">Pix</option>
+          <option value="Dinheiro">Dinheiro</option>
+        </select>
+
+        <div class="modal-buttons">
+          <button type="submit">Confirmar Pedido</button>
+          <button type="button" class="cancelar" onclick="fecharFormulario()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Pizza & Cia - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
