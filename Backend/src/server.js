@@ -5,7 +5,6 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const { connect } = require("./db");
-const pizzaRoutes = require("./routes/pizza.routes");
 const error = require("./middlewares/error");
 const orderRoutes = require("./routes/order.routes");
 
@@ -18,7 +17,7 @@ app.get("/health",(req, res) => {
     res.json({ message: "A API está em execução..."});
 });
 
-app.use("/pizza", pizzaRoutes);
+
 app.use("/order", orderRoutes);
 
 app.use(error);
