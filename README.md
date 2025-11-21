@@ -40,13 +40,13 @@ Agora vamos ligar o servidor. Abra o seu terminal e digite os comandos abaixo, u
     npm install
     ```
 
-### 3. Configuração do Banco de Dados
+### 3. Configuração do Banco de Dados MongoDB Atlas
 O servidor precisa saber onde salvar os dados.
 1.  Crie (ou edite) o arquivo `.env` dentro da pasta `Backend`.
-2.  Mude a variável de ambiente para a sua própria URI de conexão do MongoDB:
+2.  Mude a variável de ambiente para a sua própria URI de conexão do MongoDB Atlas:
     ```env
     MONGO_URI=coloque_sua_outra_uri_aqui
-    PORT=5000
+    PORT=coloque-sua-porta
     ```
 
 ### 4. Rodando
